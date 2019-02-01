@@ -1,4 +1,4 @@
-class Customer(object):
+class Account(object):
     """
     A customer of ABC Bank with a checking account. Customers have the
     following properties:
@@ -11,10 +11,6 @@ class Customer(object):
     def __init__(self, name, balance):
         """Return a Customer object whose name is *name*."""
         self.name = name
-        self.balance = balance
-
-    def set_balance(self, balance):
-        """Set the customer's starting balance."""
         self.balance = balance
 
     def withdraw(self, amount):
@@ -30,3 +26,9 @@ class Customer(object):
         dollars."""
         self.balance += amount
         return self.balance
+
+    def print_info(self):
+        print('-----------------------------')
+        print('Customer name : ', self.name)
+        print('Balance : $', self.balance)
+        print('-----------------------------\n')
