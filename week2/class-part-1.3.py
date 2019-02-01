@@ -9,13 +9,19 @@ class Account(object):
     """
 
     def __init__(self, name, balance):
-        """Return a Customer object whose name is *name*."""
+        """Return a Customer object whose name is *name*.
+        :param name:
+        :param balance:
+        """
         self.name = name
         self.balance = balance
 
     def withdraw(self, amount):
         """Return the balance remaining after withdrawing *amount*
-        dollars."""
+        dollars.
+        :param amount:
+        :return:
+        """
         if amount > self.balance:
             raise RuntimeError('Amount greater than available balance.')
         self.balance -= amount
@@ -23,11 +29,19 @@ class Account(object):
 
     def deposit(self, amount):
         """Return the balance remaining after depositing *amount*
-        dollars."""
+        dollars.
+        :param amount:
+        :return:
+            balance
+        """
         self.balance += amount
         return self.balance
 
     def print_info(self):
+        """Prints account information
+        :return:
+            None
+        """
         print('-----------------------------')
         print('Customer name : ', self.name)
         print('Balance : $', self.balance)
