@@ -11,7 +11,7 @@ try:
                                   port="5432",
                                   database="dvd")
     cursor = connection.cursor()
-    cursor.execute("SELECT * FROM actor)
+    cursor.execute("SELECT * FROM actor")
 
     while True:
         record = cursor.fetchone()
