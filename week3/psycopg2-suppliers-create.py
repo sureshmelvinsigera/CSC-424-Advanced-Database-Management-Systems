@@ -57,8 +57,11 @@ def create_tables():
         conn.commit()
     except (Exception, psycopg2.DatabaseError) as error:
         print(error)
+        conn.rollback()
     finally:
+        # closing database connection.
         if conn is not None:
+            cur.close()
             conn.close()
 
 
