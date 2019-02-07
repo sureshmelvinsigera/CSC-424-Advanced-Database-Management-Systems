@@ -21,6 +21,7 @@ def insert_vendor_list(vendor_list):
         # close communication with the database
         cur.close()
     except (Exception, psycopg2.DatabaseError) as error:
+        conn.rollback()
         print(error)
     finally:
         if conn is not None:
