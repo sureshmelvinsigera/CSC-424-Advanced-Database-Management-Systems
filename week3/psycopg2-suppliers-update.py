@@ -26,6 +26,7 @@ def update_vendor(vendor_id, vendor_name):
         # Close communication with the PostgreSQL database
         cur.close()
     except (Exception, psycopg2.DatabaseError) as error:
+        conn.rollback()
         print(error)
     finally:
         if conn is not None:
