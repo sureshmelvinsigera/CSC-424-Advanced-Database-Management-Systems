@@ -2,7 +2,10 @@ import psycopg2
 
 
 def insert_vendor(vendor_name):
-    """ insert a new vendor into the vendors table """
+    """ insert a new vendor into the vendors table
+    :param vendor_name:
+    :return: vendor_id
+    """
     sql = """INSERT INTO vendors(vendor_name)
              VALUES(%s) RETURNING vendor_id;"""
     conn = None
