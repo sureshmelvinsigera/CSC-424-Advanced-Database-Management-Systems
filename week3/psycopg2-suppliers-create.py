@@ -2,7 +2,9 @@ import psycopg2
 
 
 def create_tables():
-    """ create tables in the PostgreSQL database"""
+    """ create tables in the PostgreSQL database
+    :return: None
+    """
     commands = (
         """
         CREATE TABLE vendors (
