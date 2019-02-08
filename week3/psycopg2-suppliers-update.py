@@ -2,7 +2,11 @@ import psycopg2
 
 
 def update_vendor(vendor_id, vendor_name):
-    """ update vendor name based on the vendor id """
+    """ update vendor name based on the vendor id
+    :param vendor_id:
+    :param vendor_name:
+    :return: updated_rows
+    """
     sql = """ UPDATE vendors
                 SET vendor_name = %s
                 WHERE vendor_id = %s"""
