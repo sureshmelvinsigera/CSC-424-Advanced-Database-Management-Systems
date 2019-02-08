@@ -2,7 +2,10 @@ import psycopg2
 
 
 def insert_vendor_list(vendor_list):
-    """ insert multiple vendors into the vendors table  """
+    """ insert multiple vendors into the vendors table
+    :param vendor_list:
+    :return: None
+    """
     sql = """INSERT INTO vendors(vendor_name) VALUES(%s)"""
     conn = None
     try:
