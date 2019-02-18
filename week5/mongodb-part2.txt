@@ -1,0 +1,4 @@
+db.movies.insertOne({"title" : "Stand by Me"})
+db.movies.insertOne({"title" : "Kingsman: The Secret Service"})
+db.movies.insertOne({"title" : "Tinker, Tailor, Soldier, Spy"})
+db.movies.insertOne({"title" : "Argo"})
