@@ -1,0 +1,3 @@
+show dbs
+use CSC424
+db.createCollection("movies")
