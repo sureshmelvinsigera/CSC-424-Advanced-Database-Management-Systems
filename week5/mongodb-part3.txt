@@ -1,0 +1,5 @@
+db.movies.insertMany([
+        {"title" : "Ghostbusters"},
+        {"title" : "E.T."},
+        {"title" : "Blade Runner"}
+]);
