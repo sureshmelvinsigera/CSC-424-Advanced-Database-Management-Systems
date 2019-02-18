@@ -1,1 +1,6 @@
 show dbs
+use CSC424
+db.createCollection("students")
+show collections
+db
+db.dropDatabase()
