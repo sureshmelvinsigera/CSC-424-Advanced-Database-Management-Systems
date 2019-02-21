@@ -1,5 +1,5 @@
 db.users.updateOne({"name": "Suresh"}, {
-    $upsert: {
+    $set: {
         "age": 25,
 		"hobbies":[
 			{"title": "Cooking"},
@@ -7,4 +7,5 @@ db.users.updateOne({"name": "Suresh"}, {
 		],
 		"isSporty": true
     }
-})
+},
+{upsert:true})
