@@ -2,8 +2,10 @@ db.users.updateOne({"name": "Suresh"}, {
     $set: {
         "age": 25,
 		"hobbies":[
-			{"title": "Cooking"},
-			{"frequency":3}
+		    {
+ 	            "title": "Cooking",
+				"frequency":3
+            }
 		],
 		"isSporty": true
     }
