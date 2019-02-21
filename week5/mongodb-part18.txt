@@ -1,0 +1,6 @@
+db.users.find({$and:
+	[
+		{"hobbies.title": "Sports"},
+		{"hobbies.frequency": {$gte: 3}}
+	]
+}).count()
