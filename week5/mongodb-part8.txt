@@ -1,0 +1,31 @@
+ db.movies.insertMany([
+ {
+   "title": "Black Panther",
+   "rating": 7.4,
+   "director":
+      ["Ryan Coogler"],
+ "languages": [
+     "English",
+    ],
+ "actors": [
+     "Chadwick Boseman",
+     "Michael B. Jordan",
+     "Lupita Nyong'o",
+   ]
+ }
+ ,
+ {
+   "title": "Mission: Impossible – Fallout",
+   "rating": 7.8,
+   "director":
+      ["Christopher McQuarrie"],
+ "languages": [
+     "English",
+    ],
+ "actors": [
+     "Tom Cruise",
+     "Henry Cavill",
+     "Rebecca Ferguson",
+   ]
+ }
+])
