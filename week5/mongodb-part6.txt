@@ -1,1 +1,1 @@
-mongoimport --db tv-shows --collection shows --file data.json --jsonArray
+mongoimport --db tv-shows --collection shows --file tv-shows.json --jsonArray
