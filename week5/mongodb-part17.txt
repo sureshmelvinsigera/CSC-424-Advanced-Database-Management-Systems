@@ -1,0 +1,10 @@
+db.users.updateOne({"name": "Suresh"}, {
+    $upsert: {
+        "age": 25,
+		"hobbies":[
+			{"title": "Cooking"},
+			{"frequency":3}
+		],
+		"isSporty": true
+    }
+})
