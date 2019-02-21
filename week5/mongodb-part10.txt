@@ -1,0 +1,9 @@
+db.users.updateOne({"name": "Chris"}, {
+    $set: {
+        "hobbies": [
+            {title: "Sports", "frequency": 2},
+            {title: "Cooking", "frequency": 3},
+            {title: "Hiking", "frequency": 3}
+        ]
+    }
+})
