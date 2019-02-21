@@ -1,5 +1,5 @@
 db.users.updateOne({"name": "Manuel"}, {
     $inc: {
-        "age": 2,
+        "age": 1,
     }
 })
