@@ -1,0 +1,6 @@
+db.users.updateOne({"name": "Chris"}, {
+    $set: {
+        "age": 40,
+		"phone": 2122221222
+    }
+})
