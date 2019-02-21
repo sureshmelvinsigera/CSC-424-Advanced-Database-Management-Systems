@@ -1,0 +1,5 @@
+db.users.updateMany({"hobbies.title": "Sports"}, {
+    $set: {
+        "isSporty": true
+    }
+})
