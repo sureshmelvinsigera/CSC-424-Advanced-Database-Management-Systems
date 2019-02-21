@@ -16,25 +16,6 @@
    ]}
  )
 
-
-
-  db.movies.insertOne({
-   "title": "Ip Man 3",
-   "rating": 7.1,
-   "director":
-      ["Wilson Yip"],
- "languages": [
-     "English",
-     "Standard Mandarin",
-     "Cantonese"],
- "actors": [
-     "Donnie Yen",
-     "Zhang Jin",
-     "Mike Tyson",
-     "Danny Chan Kwok-kwan",
-   ]}
- )
-
    db.movies.insertOne({
    "title": "Ip Man 3",
    "rating": 7.1,
