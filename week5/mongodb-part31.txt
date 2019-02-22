@@ -1,0 +1,5 @@
+db.books.find({
+	$or:[
+		{"categories" : "Java"}, {"categories" : "Python"}
+	]
+}).count()
