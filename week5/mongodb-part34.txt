@@ -1,0 +1,1 @@
+ db.books.find({"authors":"Dave Crane"}, {"authors":1, "title":1})
