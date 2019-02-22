@@ -1,0 +1,3 @@
+db.books.find({
+		pageCount:{$lt:300}
+}).count()
