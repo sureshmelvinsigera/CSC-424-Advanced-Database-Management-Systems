@@ -1,0 +1,8 @@
+db.users.updateMany({
+			"hobbies":{
+					$elemMatch:{
+						"title": "Sports",
+						"frequency": {$gte:3}
+					}
+			}
+	},{ $set:{ "hobbies.$.highFrequency": true } })
