@@ -1,0 +1,7 @@
+mongoimport persons.json -d people -c contacts --jsonArray --drop
+
+connected to: localhost
+dropping: people.contacts
+imported 5000 documents
+
+db.contacts.find({ "dob.age": {$gt: 50} }).count()
