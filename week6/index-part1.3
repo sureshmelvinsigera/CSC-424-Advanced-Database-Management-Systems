@@ -1,0 +1,76 @@
+db.contacts.explain().find({ "dob.age": {$gt: 50} }).count()
+
+{
+	"queryPlanner" : {
+		"plannerVersion" : 1,
+		"namespace" : "people.contacts",
+		"indexFilterSet" : false,
+		"parsedQuery" : {
+			"dob.age" : {
+				"$gt" : 50
+			}
+		},
+		"winningPlan" : {
+			"stage" : "COUNT",
+			"inputStage" : {
+				"stage" : "COLLSCAN",
+				"filter" : {
+					"dob.age" : {
+						"$gt" : 50
+					}
+				},
+				"direction" : "forward"
+			}
+		},
+		"rejectedPlans" : [ ]
+	},
+	"executionStats" : {
+		"executionSuccess" : true,
+		"nReturned" : 0,
+		"executionTimeMillis" : 12,
+		"totalKeysExamined" : 0,
+		"totalDocsExamined" : 5000,
+		"executionStages" : {
+			"stage" : "COUNT",
+			"nReturned" : 0,
+			"executionTimeMillisEstimate" : 10,
+			"works" : 5002,
+			"advanced" : 0,
+			"needTime" : 5001,
+			"needYield" : 0,
+			"saveState" : 39,
+			"restoreState" : 39,
+			"isEOF" : 1,
+			"invalidates" : 0,
+			"nCounted" : 2204,
+			"nSkipped" : 0,
+			"inputStage" : {
+				"stage" : "COLLSCAN",
+				"filter" : {
+					"dob.age" : {
+						"$gt" : 50
+					}
+				},
+				"nReturned" : 2204,
+				"executionTimeMillisEstimate" : 10,
+				"works" : 5002,
+				"advanced" : 2204,
+				"needTime" : 2797,
+				"needYield" : 0,
+				"saveState" : 39,
+				"restoreState" : 39,
+				"isEOF" : 1,
+				"invalidates" : 0,
+				"direction" : "forward",
+				"docsExamined" : 5000
+			}
+		}
+	},
+	"serverInfo" : {
+		"host" : "snowball",
+		"port" : 27017,
+		"version" : "4.0.5",
+		"gitVersion" : "3739429dd92b92d1b0ab120911a23d50bf03c412"
+	},
+	"ok" : 1
+}
