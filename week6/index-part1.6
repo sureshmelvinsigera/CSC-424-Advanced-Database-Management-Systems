@@ -1,0 +1,108 @@
+db.contacts.dropIndex({"dob.age":1})
+
+db.contacts.explain("executionStats").find({ "gender": "male" })
+
+/* generated output
+{
+	"queryPlanner" : {
+		"plannerVersion" : 1,
+		"namespace" : "people.contacts",
+		"indexFilterSet" : false,
+		"parsedQuery" : {
+			"gender" : {
+				"$eq" : "male"
+			}
+		},
+		"winningPlan" : {
+			"stage" : "FETCH",
+			"inputStage" : {
+				"stage" : "IXSCAN",
+				"keyPattern" : {
+					"gender" : 1
+				},
+				"indexName" : "gender_1",
+				"isMultiKey" : false,
+				"multiKeyPaths" : {
+					"gender" : [ ]
+				},
+				"isUnique" : false,
+				"isSparse" : false,
+				"isPartial" : false,
+				"indexVersion" : 2,
+				"direction" : "forward",
+				"indexBounds" : {
+					"gender" : [
+						"[\"male\", \"male\"]"
+					]
+				}
+			}
+		},
+		"rejectedPlans" : [ ]
+	},
+	"executionStats" : {
+		"executionSuccess" : true,
+		"nReturned" : 2435,
+		"executionTimeMillis" : 9,
+		"totalKeysExamined" : 2435,
+		"totalDocsExamined" : 2435,
+		"executionStages" : {
+			"stage" : "FETCH",
+			"nReturned" : 2435,
+			"executionTimeMillisEstimate" : 0,
+			"works" : 2436,
+			"advanced" : 2435,
+			"needTime" : 0,
+			"needYield" : 0,
+			"saveState" : 19,
+			"restoreState" : 19,
+			"isEOF" : 1,
+			"invalidates" : 0,
+			"docsExamined" : 2435,
+			"alreadyHasObj" : 0,
+			"inputStage" : {
+				"stage" : "IXSCAN",
+				"nReturned" : 2435,
+				"executionTimeMillisEstimate" : 0,
+				"works" : 2436,
+				"advanced" : 2435,
+				"needTime" : 0,
+				"needYield" : 0,
+				"saveState" : 19,
+				"restoreState" : 19,
+				"isEOF" : 1,
+				"invalidates" : 0,
+				"keyPattern" : {
+					"gender" : 1
+				},
+				"indexName" : "gender_1",
+				"isMultiKey" : false,
+				"multiKeyPaths" : {
+					"gender" : [ ]
+				},
+				"isUnique" : false,
+				"isSparse" : false,
+				"isPartial" : false,
+				"indexVersion" : 2,
+				"direction" : "forward",
+				"indexBounds" : {
+					"gender" : [
+						"[\"male\", \"male\"]"
+					]
+				},
+				"keysExamined" : 2435,
+				"seeks" : 1,
+				"dupsTested" : 0,
+				"dupsDropped" : 0,
+				"seenInvalidated" : 0
+			}
+		}
+	},
+	"serverInfo" : {
+		"host" : "snowball",
+		"port" : 27017,
+		"version" : "4.0.5",
+		"gitVersion" : "3739429dd92b92d1b0ab120911a23d50bf03c412"
+	},
+	"ok" : 1
+}
+*/
