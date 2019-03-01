@@ -1,6 +1,6 @@
 db.contacts.createIndex({ "dob.age":1, gender:1  })
 
-db.contacts.explain().find({ "dob.age":35, gender: "male" })
+db.contacts.explain().find({ "dob.age": 30, gender:"male"  })
 
 {
 	"queryPlanner" : {
@@ -11,7 +11,7 @@ db.contacts.explain().find({ "dob.age":35, gender: "male" })
 			"$and" : [
 				{
 					"dob.age" : {
-						"$eq" : 35
+						"$eq" : 30
 					}
 				},
 				{
@@ -23,19 +23,16 @@ db.contacts.explain().find({ "dob.age":35, gender: "male" })
 		},
 		"winningPlan" : {
 			"stage" : "FETCH",
-			"filter" : {
-				"dob.age" : {
-					"$eq" : 35
-				}
-			},
 			"inputStage" : {
 				"stage" : "IXSCAN",
 				"keyPattern" : {
+					"dob.age" : 1,
 					"gender" : 1
 				},
-				"indexName" : "gender_1",
+				"indexName" : "dob.age_1_gender_1",
 				"isMultiKey" : false,
 				"multiKeyPaths" : {
+					"dob.age" : [ ],
 					"gender" : [ ]
 				},
 				"isUnique" : false,
@@ -44,6 +41,9 @@ db.contacts.explain().find({ "dob.age":35, gender: "male" })
 				"indexVersion" : 2,
 				"direction" : "forward",
 				"indexBounds" : {
+					"dob.age" : [
+						"[30.0, 30.0]"
+					],
 					"gender" : [
 						"[\"male\", \"male\"]"
 					]
