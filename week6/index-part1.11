@@ -1,0 +1,10 @@
+db.contacts.createIndex({ email:1 }, { unique: true })
+
+{
+	"ok" : 0,
+	"errmsg" : "E11000 duplicate key error collection: people.contacts index: email_1 dup key: { : \"abigail.clark@example.com\" }",
+	"code" : 11000,
+	"codeName" : "DuplicateKey"
+}
+
+db.contacts.find({ email: "abigail.clark@example.com" }).count()
