@@ -1,4 +1,4 @@
-db.books.createIndex({ "dob.age": 1, "gender": 1 })
+db.contacts.createIndex({ "dob.age":1, gender:1  })
 
 db.contacts.explain().find({ "dob.age":35, gender: "male" })
 
