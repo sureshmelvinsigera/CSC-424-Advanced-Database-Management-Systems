@@ -1,0 +1,53 @@
+db.contacts.explain().find({ "dob.age": 35 }).sort({ gender:1 })
+
+{
+	"queryPlanner" : {
+		"plannerVersion" : 1,
+		"namespace" : "people.contacts",
+		"indexFilterSet" : false,
+		"parsedQuery" : {
+			"dob.age" : {
+				"$eq" : 35
+			}
+		},
+		"winningPlan" : {
+			"stage" : "FETCH",
+			"inputStage" : {
+				"stage" : "IXSCAN",
+				"keyPattern" : {
+					"dob.age" : 1,
+					"gender" : 1
+				},
+				"indexName" : "dob.age_1_gender_1",
+				"isMultiKey" : false,
+				"multiKeyPaths" : {
+					"dob.age" : [ ],
+					"gender" : [ ]
+				},
+				"isUnique" : false,
+				"isSparse" : false,
+				"isPartial" : false,
+				"indexVersion" : 2,
+				"direction" : "forward",
+				"indexBounds" : {
+					"dob.age" : [
+						"[35.0, 35.0]"
+					],
+					"gender" : [
+						"[MinKey, MaxKey]"
+					]
+				}
+			}
+		},
+		"rejectedPlans" : [ ]
+	},
+	"serverInfo" : {
+		"host" : "snowball",
+		"port" : 27017,
+		"version" : "4.0.5",
+		"gitVersion" : "3739429dd92b92d1b0ab120911a23d50bf03c412"
+	},
+	"ok" : 1
+}
+
+db.contacts.explain().find({ "dob.age": 35 }).sort({ gender: -1 })
