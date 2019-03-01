@@ -1,3 +1,5 @@
+/* DuplicateKey issue */
+
 db.contacts.createIndex({ email:1 }, { unique: true })
 
 {
