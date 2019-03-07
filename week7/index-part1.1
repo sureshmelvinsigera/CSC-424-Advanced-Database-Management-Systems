@@ -1,0 +1,18 @@
+use people
+db.createCollection('users')
+
+db.users.insertMany([ {name:'john', email: 'john@john.com' }, {name: 'Melvin'} ])
+
+db.users.createIndex( { email: 1 }, {unique: true } )
+
+db.users.insertOne({ name: 'Stacy' })
+2019-03-07T13:58:29.622-0500 E QUERY    [js] WriteError: E11000 duplicate key error collection: people.users index: email_1 dup key: { : null } :
+WriteError({
+	"index" : 0,
+	"code" : 11000,
+	"errmsg" : "E11000 duplicate key error collection: people.users index: email_1 dup key: { : null }",
+	"op" : {
+		"_id" : ObjectId("5c8169d56333cb23e075cff3"),
+		"name" : "Stacy"
+	}
+})
