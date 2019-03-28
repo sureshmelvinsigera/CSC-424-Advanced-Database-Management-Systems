@@ -13,11 +13,23 @@ db = client.website  # accessing the website database
 
 posts_collection = db.posts
 
-single_post = {
-    'title': "Java 101",
-    "content": "Welcome to Java programming",
-    "author": "Steve Harley"
+post_1 = {
+    'title': 'Python and MongoDB',
+    'content': 'PyMongo is fun, you guys',
+    'author': 'Scott Smith'
+}
+post_2 = {
+    'title': 'Anaconda Virtual Environments',
+    'content': 'Use virtual environments',
+    'author': 'Scott Smith'
+}
+post_3 = {
+    'title': 'Learning Python and Amazon EC2',
+    'content': 'Learn Python, it is easy',
+    'author': 'Bill Smith'
 }
 
-# inserting the single post
-result = posts_collection.insert_one(single_post)
+# insert many
+result = posts_collection.insert_many([post_1, post_2, post_3])
+
+print('Multiple posts: {0}'.format(result.inserted_ids))
