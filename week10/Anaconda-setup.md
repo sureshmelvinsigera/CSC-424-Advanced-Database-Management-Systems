@@ -18,3 +18,8 @@ conda create -n CSC424-PyMongo python=3.6
 ```
 conda install -c anaconda pymongo 
 ```
+
+## Installing Mongoengine
+```
+conda install -c conda-forge mongoengine 
+```
