@@ -13,6 +13,6 @@ db = client.website  # accessing the website database
 
 posts_collection = db.posts.find()
 
-# print all the postsposts
+# print all the posts
 for post in posts_collection:
     print(post['title'])
