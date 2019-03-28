@@ -1,0 +1,15 @@
+use shop
+db.createCollection('products')
+db.products.insertOne({ 'name' : 'Best of Python', 'price' : 49.99  })
+
+db.products.insertOne({
+	name: "Gildan Men's Assorted Crew T-Shirt Multipack",
+	price: 11.99,
+	seller:
+		{
+			name:"Gildan",
+			category: "t-shirts",
+		}
+	})
+
+
