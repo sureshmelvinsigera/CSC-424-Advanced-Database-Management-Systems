@@ -1,0 +1,11 @@
+use student
+
+db.createUser({
+    user: "Employeeadmin", pwd: "password",
+        roles:
+            [
+                {
+                    role: "userAdmin" , db:"Employee"
+                 }
+            ]
+})

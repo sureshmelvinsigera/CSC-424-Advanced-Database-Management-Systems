@@ -1,0 +1,12 @@
+use admin
+
+db.createUser( {
+    user: "Suresh", pwd: "Sigera",
+        roles:[
+                {
+                    role: "userAdminAnyDatabase" ,
+                    db:"admin"
+                }
+        ]
+    }
+)
